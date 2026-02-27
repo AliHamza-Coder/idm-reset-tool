@@ -1,0 +1,47 @@
+# Virtual Environments
+venv/
+myenv/
+env/
+ENV/
+.venv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+pip-delete-this-directory.txt
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.windows-thumbnail.db
+desktop.ini
+
+# Project specific
+*.log
+temp/
+tmp/
+backup/
+*.bak
+
+# PyCharm
+.PyCharm.version
