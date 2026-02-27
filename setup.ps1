@@ -154,21 +154,27 @@ catch {
 }
 Write-Host ""
 
-# Step 6: Create command wrapper
-Write-Status "📝 Creating global command..." "Info"
+# Step 6: Create PowerShell command wrapper
+Write-Status "📝 Creating global PowerShell command..." "Info"
 $cmdPath = "$env:LOCALAPPDATA\Programs\idm-reset-tool"
 if (-not (Test-Path $cmdPath)) {
     New-Item -ItemType Directory -Path $cmdPath -Force | Out-Null
 }
 
 $wrapperScript = @"
-@echo off
-python "$projectPath\main.py" %*
-pause
+powershell.exe -NoExit -File \"$projectPath\main.ps1\" @args
 "@
 
-$wrapperPath = "$cmdPath\idm-reset-tool.bat"
-Set-Content -Path $wrapperPath -Value $wrapperScript -Force
+$wrapperPath = "$cmdPath\idm-reset-tool.ps1"
+# Create batch launcher for the PowerShell command
+$batchLauncher = @"
+@echo off
+cd /d \"$projectPath\"
+powershell.exe -NoExit -File \"main.ps1\" %*
+"@
+
+$batchPath = "$cmdPath\idm-reset-tool.bat"
+Set-Content -Path $batchPath -Value $batchLauncher -Force
 
 # Add to PATH if not already there
 $userPath = [Environment]::GetEnvironmentVariable("PATH", "User")
