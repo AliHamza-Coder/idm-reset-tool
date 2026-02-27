@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    IDM-Reset - Automatic Setup Installer
+    IDM-Reset Tool - Automatic Setup Installer
     Downloads and configures everything needed to run the tool
 
 .DESCRIPTION
@@ -8,11 +8,11 @@
     1. Downloads the project from GitHub
     2. Sets up Python virtual environment
     3. Installs required dependencies
-    4. Creates a global 'idm-reset' command
+    4. Creates a global 'idm-reset-tool' command
     5. Creates a desktop shortcut
 
 .EXAMPLE
-    irm https://raw.githubusercontent.com/AliHamza-Coder/idm-reset/main/setup.ps1 | iex
+    irm https://raw.githubusercontent.com/AliHamza-Coder/idm-reset-tool/main/setup.ps1 | iex
 #>
 
 # Stop on any error
@@ -39,7 +39,7 @@ function Write-Status {
 # Banner
 Clear-Host
 Write-Host "╔════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
-Write-Host "║            IDM-Reset - Automatic Setup Installer          ║" -ForegroundColor Cyan
+Write-Host "║       IDM-Reset Tool - Automatic Setup Installer        ║" -ForegroundColor Cyan
 Write-Host "║                    v3.2.0                                 ║" -ForegroundColor Cyan
 Write-Host "╚════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
 Write-Host ""
@@ -71,8 +71,8 @@ Write-Host ""
 
 # Step 2: Determine installation location
 Write-Status "📁 Determining installation location..." "Info"
-$installPath = "$env:LOCALAPPDATA\idm-reset"
-$projectPath = "$installPath\idm-reset"
+$installPath = "$env:LOCALAPPDATA\idm-reset-tool"
+$projectPath = "$installPath\idm-reset-tool"
 
 # Create installation directory
 if (-not (Test-Path $installPath)) {
@@ -82,7 +82,7 @@ if (-not (Test-Path $installPath)) {
 Write-Host ""
 
 # Step 3: Clone or update repository
-Write-Status "📥 Downloading idm-reset from GitHub..." "Info"
+Write-Status "📥 Downloading idm-reset-tool from GitHub..." "Info"
 if (Test-Path "$projectPath\.git") {
     Write-Status "📦 Repository already exists, updating..." "Info"
     Push-Location $projectPath
@@ -100,7 +100,7 @@ else {
         $zipPath = "$env:TEMP\idm-reset.zip"
         $webClient = New-Object System.Net.WebClient
         $webClient.DownloadFile(
-            "https://github.com/AliHamza-Coder/idm-reset/archive/refs/heads/main.zip",
+            "https://github.com/AliHamza-Coder/idm-reset-tool/archive/refs/heads/main.zip",
             $zipPath
         )
         
@@ -220,7 +220,7 @@ Write-Host ""
 
 # Complete!
 Write-Host "╔════════════════════════════════════════════════════════════╗" -ForegroundColor Green
-Write-Host "║          ✅ IDM-Reset Setup Complete!                     ║" -ForegroundColor Green
+Write-Host "║          ✅ IDM-Reset Tool Setup Complete!                ║" -ForegroundColor Green
 Write-Host "╚════════════════════════════════════════════════════════════╝" -ForegroundColor Green
 Write-Host ""
 

@@ -1,4 +1,4 @@
-# IDM-Reset
+# IDM-Reset Tool
 
 <div align="center">
 
@@ -17,7 +17,7 @@
 
 ## 📋 About
 
-**IDM-Reset** is a professional Windows utility that thoroughly removes Internet Download Manager (IDM) and related malware artifacts from your system. It scans your registry (`HKEY_USERS`) for CLSID entries ending with `CA7` - commonly associated with browser hijackers, adware, and unwanted toolbars.
+**IDM-Reset Tool** is a professional Windows utility that thoroughly removes Internet Download Manager (IDM) and related malware artifacts from your system. It scans your registry (`HKEY_USERS`) for CLSID entries ending with `CA7` - commonly associated with browser hijackers, adware, and unwanted toolbars.
 
 This tool provides two implementations:
 - 🐍 **Python** version (recommended for developers)
@@ -61,12 +61,14 @@ Both versions automatically elevate to Administrator privileges and provide safe
 
 ## 🚀 Quick Start (One Command!)
 
+> 👆 **Just copy‑paste one PowerShell line and you're ready to go.**
+
 ### Option 1: Automatic Setup (Recommended)
 
 Copy and paste this command in **PowerShell** (as Administrator):
 
 ```powershell
-irm https://raw.githubusercontent.com/AliHamza-Coder/idm-reset/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/AliHamza-Coder/idm-reset-tool/main/setup.ps1 | iex
 ```
 
 This automatically:
@@ -82,8 +84,8 @@ Then run: **`idm-reset-tool`** from any PowerShell window!
 
 1. **Clone the repository:**
    ```powershell
-   git clone https://github.com/AliHamza-Coder/idm-reset.git
-   cd idm-reset
+   git clone https://github.com/AliHamza-Coder/idm-reset-tool.git
+   cd idm-reset-tool
    ```
 
 2. **Create virtual environment:**
@@ -267,7 +269,7 @@ Delete this entry? {GUID-ending-with-CA7}
 ## 📦 What's Included
 
 ```
-idm-reset/
+idm-reset-tool/
 ├── main.py              # Python implementation (feature-rich)
 ├── main.ps1             # PowerShell implementation (lightweight)
 ├── setup.ps1            # Automatic installer/updater
@@ -281,7 +283,7 @@ idm-reset/
 
 ## 🤝 Contributing
 
-Found a bug? Have an improvement? [Open an Issue](https://github.com/AliHamza-Coder/idm-reset/issues)
+Found a bug? Have an improvement? [Open an Issue](https://github.com/AliHamza-Coder/idm-reset-tool/issues)
 
 ---
 
@@ -302,9 +304,9 @@ If this tool helped you clean your registry, please:
 
 ## 🔗 Links
 
-- **GitHub**: https://github.com/AliHamza-Coder/idm-reset
-- **Report Bug**: https://github.com/AliHamza-Coder/idm-reset/issues
-- **Request Feature**: https://github.com/AliHamza-Coder/idm-reset/issues
+- **GitHub**: https://github.com/AliHamza-Coder/idm-reset-tool
+- **Report Bug**: https://github.com/AliHamza-Coder/idm-reset-tool/issues
+- **Request Feature**: https://github.com/AliHamza-Coder/idm-reset-tool/issues
 
 ---
 
